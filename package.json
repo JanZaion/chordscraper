@@ -1,0 +1,25 @@
+{
+  "name": "chordscraper",
+  "version": "1.0.0",
+  "description": "retrieve chords, hopefully",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanZaion/chordscraper.git"
+  },
+  "author": "Jan Zaion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanZaion/chordscraper/issues"
+  },
+  "homepage": "https://github.com/JanZaion/chordscraper#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
