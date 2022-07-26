@@ -15,12 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const fs_1 = __importDefault(require("fs"));
 const urls_1 = require("./urls");
-const writeSingleResponse = (url, querry, filename = 'resp') => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(`${url}?${querry}`);
-    const res = yield axios_1.default.get(`${url}?${querry}`);
+const writeSingleResponse = (url, filename = 'resp') => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield axios_1.default.get(url);
     const data = res.data;
     const json = JSON.stringify(data, null, 4);
-    fs_1.default.writeFileSync(`./responses/${filename}.json`, json);
+    fs_1.default.writeFileSync(`../responses/${filename}.json`, json);
 });
-writeSingleResponse(urls_1.urls.songsterr, 'pattern=Marley', 'songsterr');
+const callNwrite = (() => __awaiter(void 0, void 0, void 0, function* () {
+    writeSingleResponse(urls_1.urls.songsterr, 'songsterr');
+    writeSingleResponse(urls_1.urls.discogs, 'discogs');
+    writeSingleResponse(urls_1.urls.lyricsovh, 'lyricsovh');
+    writeSingleResponse(urls_1.urls.theaudiodb, 'theaudiodb');
+}))();
 //# sourceMappingURL=index.js.map
